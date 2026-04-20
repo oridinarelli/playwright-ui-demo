@@ -2,17 +2,40 @@
 
 Proyecto de automatización UI desarrollado con Playwright + TypeScript.
 
+## Prerrequisitos
+
+- Node.js versión 18 o superior
+- npm o yarn instalado
+
 ## Funcionalidades cubiertas
 
 - Login (positivo y negativo)
 - Validación de errores
 - Navegación básica
+- Inventario de productos
+- Carrito de compras
+- Checkout
 
 ## Stack
 
 - Playwright
 - TypeScript
 - Page Object Model
+
+## Estructura del Proyecto
+
+- `pages/`: Clases Page Object para cada página (LoginPage, InventoryPage, etc.)
+- `fixtures/`: Datos de prueba (usuarios, datos de checkout)
+- `tests/`: Archivos de tests (login.spec.ts, inventory.spec.ts, etc.)
+- `env/`: Archivos de configuración de entornos (.env)
+- `playwright-report/`: Reportes de ejecución
+- `test-results/`: Resultados de tests
+
+## Instalación y Configuración
+
+1. Clona el repositorio.
+2. Instala dependencias: `npm install`
+3. Instala navegadores de Playwright: `npx playwright install`
 
 ## Ejecutar tests
 
@@ -85,3 +108,18 @@ El pipeline se usa para:
 - correr regresiones automáticas
 - validar que no se rompió nada
 - detectar bugs antes de producción
+
+## Ver Reportes
+
+Después de ejecutar tests, abre `playwright-report/index.html` en un navegador para ver el reporte detallado.
+
+## Contribución
+
+1. Crea una rama para tu feature.
+2. Agrega tests para nuevas funcionalidades.
+3. Ejecuta todos los tests antes de hacer commit.
+4. Abre un Pull Request.
+
+## Licencia
+
+ISC
