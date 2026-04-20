@@ -6,7 +6,9 @@
     "test": "playwright test",
     "test:qa": "cross-env TEST_ENV=qa playwright test",
     "test:staging": "cross-env TEST_ENV=staging playwright test",
-    "test:prod": "cross-env TEST_ENV=prod playwright test"
+    "test:prod": "cross-env TEST_ENV=prod playwright test",
+    "test:smoke": "cross-env TEST_ENV=qa playwright test -g @smoke",
+    "test:regression": "cross-env TEST_ENV=qa playwright test -g @regression"
   },
   "keywords": [],
   "author": "",

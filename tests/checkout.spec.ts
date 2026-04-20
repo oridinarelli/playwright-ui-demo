@@ -17,7 +17,7 @@ test.describe('Checkout', () => {
     await inventoryPage.openCart();
   });
 
-  test('user can complete checkout successfully', async ({ page }) => {
+  test('user can complete checkout successfully @smoke @regression', async ({ page }) => {
     const cartPage = new CartPage(page);
     const checkoutPage = new CheckoutPage(page);
 
@@ -40,7 +40,7 @@ test.describe('Checkout', () => {
     await checkoutPage.validateCheckoutComplete();
   });
 
-  test('user sees error when required checkout data is missing', async ({
+  test('user sees error when required checkout data is missing @regression', async ({
     page,
   }) => {
     const cartPage = new CartPage(page);

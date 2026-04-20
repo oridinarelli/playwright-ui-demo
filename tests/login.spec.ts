@@ -3,7 +3,7 @@ import { LoginPage } from '../pages/LoginPage';
 import { users } from '../fixtures/users';
 
 test.describe('Login', () => {
-  test('successful login with valid credentials', async ({ page }) => {
+  test('successful login with valid credentials @smoke @regression', async ({ page }) => {
     const loginPage = new LoginPage(page);
 
     await loginPage.goto();
@@ -12,7 +12,7 @@ test.describe('Login', () => {
     await expect(page).toHaveURL(/inventory\.html/);
   });
 
-  test('shows error message with invalid credentials', async ({ page }) => {
+  test('shows error message with invalid credentials @regression', async ({ page }) => {
     const loginPage = new LoginPage(page);
 
     await loginPage.goto();
@@ -24,7 +24,7 @@ test.describe('Login', () => {
     );
   });
 
-  test('shows error message for locked out user', async ({ page }) => {
+  test('shows error message for locked out user @regression', async ({ page }) => {
     const loginPage = new LoginPage(page);
 
     await loginPage.goto();

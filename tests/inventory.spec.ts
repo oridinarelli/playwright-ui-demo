@@ -11,14 +11,14 @@ test.describe('Inventory', () => {
     await loginPage.login(users.standard.username, users.standard.password);
   });
 
-  test('inventory page loads successfully', async ({ page }) => {
+  test('inventory page loads successfully @smoke', async ({ page }) => {
     const inventoryPage = new InventoryPage(page);
 
     await expect(page).toHaveURL(/inventory\.html/);
     await inventoryPage.validateInventoryLoaded();
   });
 
-  test('user can add a product to the cart', async ({ page }) => {
+  test('user can add a product to the cart @smoke @regression', async ({ page }) => {
     const inventoryPage = new InventoryPage(page);
     const productName = 'Sauce Labs Backpack';
 
@@ -29,7 +29,7 @@ test.describe('Inventory', () => {
     await expect(inventoryPage.removeButton(productName)).toBeVisible();
   });
 
-  test('user can remove a product from the cart', async ({ page }) => {
+  test('user can remove a product from the cart @regression', async ({ page }) => {
     const inventoryPage = new InventoryPage(page);
     const productName = 'Sauce Labs Backpack';
 
@@ -42,7 +42,7 @@ test.describe('Inventory', () => {
     await expect(inventoryPage.addToCartButton(productName)).toBeVisible();
   });
 
-  test('user can sort products by name A to Z', async ({ page }) => {
+  test('user can sort products by name A to Z @regression', async ({ page }) => {
     const inventoryPage = new InventoryPage(page);
 
     await inventoryPage.sortBy('az');
