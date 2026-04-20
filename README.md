@@ -78,3 +78,10 @@ npx playwright test --debug
 npx playwright test tests/login.spec.ts --headed
 ````
 Permite ejecutar un archivo de test puntual y visualizar su ejecución.
+
+
+### Integracion CI
+El pipeline se usa para:
+- correr regresiones automáticas
+- validar que no se rompió nada
+- detectar bugs antes de producción
